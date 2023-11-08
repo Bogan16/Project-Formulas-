@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/create_category-styles.css' %}">
+  {% endblock %}
+  <title>Create Category</title>
+</head>
+<body>
+
+  <div class="category-container">
+    
+    <h1>Create Category</h1>
+
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="create-button">Create</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+    <h2>Existing Categories</h2>
+    <div class="table-container">
+      <table class="category-table">
+
+        <thead>
+          <tr>
+            <th>Name of Category</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {% for category in categories %}
+            <tr>
+              <td class="long-text_category">{{ category.name }}</td>
+              <td>
+                <a href="{% url 'edit_category' category.name %}" class="button">Edit</a>
+                <a href="{% url 'delete_category' category.name %}" class="button">Delete</a>
+              </td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="4">No categories available.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+
+      </table>
+    </div>
+
+    {% if not error %}
+      <div class="alert alert-success">
+        Category created successfully!
+      </div>
+    {% endif %}
+  
+    {% if error %}
+      <div class="alert alert-danger">
+        {{ error }}
+      </div>
+    {% endif %}
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/edit_category-styles.css' %}">
+  {% endblock %}
+  <title>Edit Category</title>
+</head>
+<body>
+  <div class="category-edit-container">
+    
+    <h1>Edit Category</h1>
+  
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="edit_button">Save Changes</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

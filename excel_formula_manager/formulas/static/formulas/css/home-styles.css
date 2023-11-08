@@ -1,0 +1,89 @@
+body {
+  background-color: #1F497D;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+h1 {
+  color: #FFC000;
+}
+
+.search-form {
+  margin-top: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 200px;
+  border: 1px solid #4F81BD;
+  background-color: #1F497D;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.search-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #4F81BD;
+  border-radius: 4px;
+}
+
+.search-button:hover {
+  background-color: #FFD966;
+  border: 1px solid #FFD966;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+a.button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a.button:hover {
+  background-color: #FFD966;
+}
+
+.button-group {
+  margin-top: 20px;
+}
+
+.formula-table th, .formula-table td {
+  padding: 15px;
+}
+
+.formula-table th {
+  background-color: #ffb700;
+}
+
+.formula-table tr:hover {
+  background-color: #142f4fa5;
+}
+
+.long-text_formula {
+  max-width: 70px; 
+  white-space:  pre;
+  overflow-x: auto;
+}
+
+.long-text_formula {
+  max-width: 70px; 
+  white-space:  pre;
+  overflow-x: auto;
+}

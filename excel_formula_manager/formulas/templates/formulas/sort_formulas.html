@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/sort_formulas-styles.css' %}">
+  {% endblock %}
+  <title>Sorted Formulas</title>
+</head>
+<body>
+  <div class="sort-formulas-container">
+
+    <h1>Sorted Formulas</h1>
+
+    <form action="{% url 'sort_formulas' %}" method="get">
+
+      <div class="sort-options">
+        <label for="sort_value">Enter Slug or Category:</label>
+        <input type="text" name="sort_value" id="sort_value">
+        <input type="radio" name="sort_by" value="slug" id="sort_by_slug">
+        <label for="sort_by_slug">Sort by slug</label>
+        <input type="radio" name="sort_by" value="category" id="sort_by_category">
+        <label for="sort_by_category">Sort by category</label>
+        <button type="submit" class="button-sort">Sort</button>
+      </div>
+
+    </form>
+    {% if formulas %}
+
+      <table class="sort-table">
+        <thead>
+
+          <tr>
+            <th>Linear</th>
+            <th>Professional</th>
+            <th>{% if sort_by == 'slug' %}Slug{% else %}Category{% endif %}</th>
+          </tr>
+
+        </thead>
+
+        <tbody>
+          {% for formula in formulas %}
+            <tr>
+              <td class="long-text_formula">{{ formula.text }}</td>
+              <td>{% if formula.photo_formulas %}<img src="{{ formula.photo_formulas.url }}" alt="Photo of the formula" width="50">{% else %}-{% endif %}</td>
+              <td>{% if sort_by == 'slug' %}{{ formula.slug }}{% else %}{% if formula.category %}{{ formula.category.name }}{% else %}-{% endif %}{% endif %}</td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="3">There is no such slug or This category does not exist.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+
+      </table>
+    {% endif %}
+    {% if not formulas %}
+      <p>No such slug or category exists.</p>
+    {% endif %}
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

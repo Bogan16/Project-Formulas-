@@ -1,0 +1,59 @@
+body {
+  background-color: #1F497D;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFC000;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="file"], select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  background-color: #3F7FBF;
+  border: 1px solid #3F7FBF;
+  color: white;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #FFD966;
+}
+
+.home_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.home_button:hover {
+  background-color: #FFD966;
+}

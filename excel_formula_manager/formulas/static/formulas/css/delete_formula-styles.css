@@ -1,0 +1,44 @@
+body {
+  background-color: #1F497D;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFC000;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+button[type="submit"] {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+button[type="submit"]:hover {
+  background-color: #FFD966;
+}
+
+.home_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.home_button:hover {
+  background-color: #FFD966;
+}

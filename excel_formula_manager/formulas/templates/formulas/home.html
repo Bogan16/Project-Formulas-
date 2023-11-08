@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/home-styles.css' %}">
+  {% endblock %}
+  <title>Formulas</title>
+</head>
+<body>
+  <div class="homepage-container">
+
+    {% block content %}
+
+      <h1>Formulas</h1>
+
+      <form method="get" action="{% url 'home' %}" class="search-form">
+        <input type="text" name="search" placeholder="Search formulas" class="search-input" value="{{ search_query }}">
+        <button type="submit" class="search-button">Search</button>
+      </form>
+
+      <div class="button-group">
+        <a href="{% url 'create_formula' %}" class="button">Create Formula</a>
+        <a href="{% url 'sort_formulas' %}" class="button">Sort Formulas</a>
+        <a href="{% url 'create_category' %}" class="button">Create Category</a>
+      </div>
+      
+      <div class="table-container">
+        <table class="formula-table">
+          <thead>
+            <tr>
+              <th>Linear</th>
+              <th>Professional</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for formula in formulas %}
+              <tr>
+                <td class="long-text_formula">{{ formula.text }}</td>
+                <td>
+                  {% if formula.photo_formulas %}
+                    <img src="{{ formula.photo_formulas.url }}" alt="Photo of the formula" width="50">
+                  {% else %}
+                    -
+                  {% endif %}
+                </td> 
+                <td>
+                  <a href="{% url 'edit_formula' formula.slug %}" class="button">Edit</a>
+                  <a href="{% url 'delete_formula' formula.slug %}" class="button">Delete</a>
+                </td>
+              </tr>
+            {% empty %}
+              <tr>
+                <td colspan="4">No formulas available</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    
+    {% endblock %}
+
+  </div>
+</body>
+</html>

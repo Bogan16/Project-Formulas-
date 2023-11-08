@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/create_formula-styles.css' %}">
+  {% endblock %}
+  <title>Create Formula</title>
+</head>
+<body>
+  <div class="formula-create-container">
+
+    <h1>Create Formula</h1>
+  
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="id_text" class="text-str">Text:</label>
+        {{ form.text }}
+      </div>
+
+      <div class="form-group">
+        <label for="id_photo_formulas" class="photo-str">Photo formulas:</label>
+        {{ form.photo_formulas }}
+      </div>
+
+      <div class="form-group">
+        <label for="id_slug">Slug:</label>
+        {{ form.slug }}
+      </div>
+
+      <div class="form-group">
+        <label for="id_category">Category:</label>
+        {{ form.category }}
+      </div>
+
+      <button type="submit" class="create-button">Create</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+    {% if success %}
+      <div class="alert alert-success">
+        {{ success }}
+      </div>
+    {% endif %}
+
+    {% if error %}
+      <div class="alert alert-danger">
+        {{ error }}
+      </div>
+    {% endif %}
+    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+  background-color: #1F497D;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFC000;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="file"], select {
+  width: 100%;
+  padding: 10px;
+  background-color: #3F7FBF;
+  border: 1px solid #3F7FBF;
+  color: white;
+  margin-top: 10px;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.sort-table th, .sort-table td {
+  padding: 15px;
+  text-align: center;
+}
+
+.sort-table th {
+  background-color: #ffb700;
+}
+
+.sort-table tr:hover {
+  background-color: #142f4fa5;
+}
+
+.long-text_formula {
+  max-width: 70px; 
+  white-space:  pre;
+  overflow-x: auto;
+}
+
+.long-text_formula {
+  max-width: 70px; 
+  white-space:  pre;
+  overflow-x: auto;
+}
+
+.button-sort {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.button-sort.button {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.button-sort:hover {
+  background-color: #FFD966;
+}
+
+button.home_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.home_button:hover {
+  background-color: #FFD966;
+}
+
+button.home_button {
+  margin-top: 20px;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+}
+
+.sort-options label, input {
+  display: flex;
+  display: inline;
+}

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/edit_formula-styles.css' %}">
+  {% endblock %}
+  <title>Edit Formula</title>
+</head>
+<body>
+  <div class="formula-edit-container">
+    
+    <h1>Edit Formula</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Save Changes</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

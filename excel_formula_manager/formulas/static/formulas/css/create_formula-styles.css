@@ -1,0 +1,57 @@
+body {
+  background-color: #1F497D;
+  font-family: Arial, sans-serif;
+  color: white;
+  padding: 20px;
+}
+
+h1 {
+  color: #FFC000;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="file"], select {
+  width: calc(100% - 22px);
+  padding: 10px;
+  background-color: #3F7FBF;
+  border: 1px solid #3F7FBF;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+.create-button, .home_button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4F81BD;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.home_button {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.create-button:hover, .home_button:hover {
+  background-color: #FFD966;
+}
+
+.text-str {
+  margin-bottom: 10px;
+}
+
+.photo-str {
+  margin-top: 20px;
+}

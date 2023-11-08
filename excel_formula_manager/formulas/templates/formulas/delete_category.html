@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/delete_category-styles.css' %}">
+  {% endblock %}
+  <title>Delete Category</title>
+</head>
+<body>
+  <div class="category-delete-container">
+    
+    <h1>Delete Category</h1>
+  
+    <p>Are you sure you want to delete "{{ category.name }}"?</p>
+
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit" class="delete-button">Delete</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+  </div>
+
+</body>
+</html>

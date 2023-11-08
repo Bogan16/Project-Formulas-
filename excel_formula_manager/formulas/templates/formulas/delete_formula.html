@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {% block css %}
+    <link rel="stylesheet" href="{% static 'formulas/css/delete_formula-styles.css' %}">
+  {% endblock %}
+  <title>Delete Formula</title>
+</head>
+<body>
+  <div class="formula-delete-container">
+    
+    <h1>Delete Formula</h1>
+  
+    <p>Are you sure you want to delete "{{ formula.text }}"?</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Delete</button>
+    </form>
+
+    <form method="get" action="{% url 'home' %}">
+      <button type="submit" class="home_button">Home</button>
+    </form>
+
+  </div>
+
+</body>
+</html>
